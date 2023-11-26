@@ -10,19 +10,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
   dio: ^5.3.4
-  http_mock_adapter: ^0.4.4
+  http_mock_adapter: ^0.6.1
   mobx: ^2.2.1
-  get_it: ^7.6.0
-  shared_preferences: ^0.5.5
+  get_it: ^7.6.4
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
-  build_runner: ^2.3.3
-  mockito: ^5.4.0
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.6
+  mockito: ^5.4.3
 
 flutter:
   uses-material-design: true

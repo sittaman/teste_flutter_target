@@ -12,7 +12,10 @@ class LoginDatasourceImpl implements LoginDatasource {
   @override
   Future<bool> login(String login, String password) async {
     try {
-      final response = await dioClient.get(path);
+      final response = await dioClient.post(
+        'https://655c91ec25b76d9884fd8cc3.mockapi.io/login',
+        data: {'login': login, 'password': password},
+      );
 
       if (response.statusCode == 200) {
         return true;

@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class InputDatasource {
   Future<bool> saveData(String key, String data);
-  Future<String> getData(String key);
+  String getData(String key);
 }
 
 class InputDatasourceImpl implements InputDatasource {
@@ -21,9 +21,9 @@ class InputDatasourceImpl implements InputDatasource {
   }
 
   @override
-  Future<String> getData(String key) async {
+  String getData(String key) {
     try {
-      return await sharedPreferences.get(key);
+      return sharedPreferences.get(key) as String;
     } catch (e) {
       rethrow;
     }

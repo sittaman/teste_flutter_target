@@ -5,9 +5,9 @@ class RestoreDataUsecase {
 
   final InputDatasourceImpl datasource;
 
-  Future<String> call(String key) async {
+  String call(String key) {
     try {
-      return await datasource.getData(key);
+      return datasource.getData(key);
     } catch (e) {
       return '';
     }
