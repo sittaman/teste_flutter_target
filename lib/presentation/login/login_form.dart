@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teste_flutter_target/core/ds/inline_label.dart';
+import 'package:teste_flutter_target/presentation/login/login_controller.dart';
+import 'package:teste_flutter_target/service_locator.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({super.key});
@@ -8,6 +10,8 @@ class LoginForm extends StatelessWidget {
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  final LoginController _loginController = sl.get<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +41,14 @@ class LoginForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _loginController.login(
+                      _usernameController.text,
+                      _passwordController.text,
+                    );
+                  }
+                },
                 child: const Text('Entrar'),
               ),
             ],

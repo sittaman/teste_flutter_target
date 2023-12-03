@@ -6,10 +6,22 @@ import 'package:teste_flutter_target/data/datasource/login_datasource.dart';
 import 'package:teste_flutter_target/domain/usecase/login_usecase.dart';
 import 'package:teste_flutter_target/domain/usecase/restore_data_usecase.dart';
 import 'package:teste_flutter_target/domain/usecase/save_data_usecase.dart';
+import 'package:teste_flutter_target/presentation/input/input_controller.dart';
+import 'package:teste_flutter_target/presentation/login/login_controller.dart';
 
 final sl = GetIt.I;
 
 Future<void> init() async {
+  sl.registerLazySingleton<LoginController>(
+      () => LoginController(loginUsecase: sl()));
+
+  sl.registerLazySingleton<InputController>(
+    () => InputController(
+      restoreDataUsecase: sl(),
+      saveDataUsecase: sl(),
+    ),
+  );
+
   sl.registerLazySingleton(() => LoginUsecase(sl()));
   sl.registerLazySingleton(() => SaveDataUsecase(sl()));
   sl.registerLazySingleton(() => RestoreDataUsecase(sl()));

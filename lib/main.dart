@@ -50,7 +50,7 @@ class FlutterTarget extends StatelessWidget {
           ),
         ),
       ),
-      home: InputView(),
+      home: LoginView(),
     );
   }
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:teste_flutter_target/core/ds/base_scaffold.dart';
+import 'package:teste_flutter_target/presentation/login/login_controller.dart';
 import 'package:teste_flutter_target/presentation/login/login_form.dart';
+import 'package:teste_flutter_target/service_locator.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
