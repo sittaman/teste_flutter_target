@@ -12,7 +12,10 @@ class LoginView extends StatelessWidget {
       child: Column(
         children: [
           const Spacer(),
-          LoginForm(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: LoginForm(),
+          ),
           const Spacer(),
           TextButton(
             style: TextButton.styleFrom(foregroundColor: Colors.white),
